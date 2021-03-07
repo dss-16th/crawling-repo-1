@@ -119,4 +119,40 @@
 
 * name, artist, viewCount, current_Rank, previous_Rank, change, period_on_chart, image, play_url 불러오기
 
-##### 1. 
+##### 1. name(노래 제목)
+
+```
+title = [{"title":data["name"]}
+        for data in datas]
+title
+```
+![title 코드](https://user-images.githubusercontent.com/75352728/110235012-1da02a80-7f71-11eb-944f-63185ab404b4.PNG)
+
+* datas에 들어있는 data를 for문을 이용하여 하나씩 가져오기
+* 노래제목은 dict 안에 key값 name에 들어있음.
+* 
+![title](https://user-images.githubusercontent.com/75352728/110234901-65728200-7f70-11eb-9c76-c66efca55353.PNG)
+
+##### 2. artist(가수)
+
+```
+artist = [{"artist":data["artists"][0]["name"]}
+        for data in datas]
+artist
+```
+![artist 코드값](https://user-images.githubusercontent.com/75352728/110235057-5b04b800-7f71-11eb-9e12-e2414963530c.PNG)
+
+* datas에 들어있는 data를 for문을 이용하여 하나씩 가져오기
+* 가수 이름은 dict 안에 key값 artists에 들어있음.
+* artists 의 value는 list 안 dict 타입으로 list에 들어있는 0번째 data를 빼오기 위해 `[0]` 을 사용 
+* dict 안에 name value값 빼오기
+
+![artist](https://user-images.githubusercontent.com/75352728/110234958-a8ccf080-7f70-11eb-97f9-63ce7f07f64c.PNG)
+
+
+##### 3. viewCount(조회수)
+
+```
+
+```
+
