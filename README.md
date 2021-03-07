@@ -92,3 +92,31 @@
 
 ![image](https://user-images.githubusercontent.com/75352728/110234450-dfedd280-7f6d-11eb-9a60-e5c3726f6731.png)
 
+* Request header -> header값인 referer을 발견함.
+
+![image](https://user-images.githubusercontent.com/75352728/110234493-188dac00-7f6e-11eb-9b88-5a2d98952775.png)
+
+* header값 기입 -> error 발생
+
+![image](https://user-images.githubusercontent.com/75352728/110234500-2cd1a900-7f6e-11eb-9ece-851d66ef7c54.png)
+
+* 개발자 도구 -> request playroad를 query에 입력
+
+![image](https://user-images.githubusercontent.com/75352728/110234547-64405580-7f6e-11eb-8201-98085b938d28.png)
+
+* 성공적으로 json format 불러옴.
+
+
+#### 2. 원하는 데이터 불러오기
+
+![image](https://user-images.githubusercontent.com/75352728/110234572-8934c880-7f6e-11eb-8002-55ca9633bf63.png)
+
+* 개발자 도구에서 본 불러온 json 에 저장된 값들
+* 원하는 값을 불러오기
+  *  contents > sectionListRenderer > contents > 0 > musicAnalyticsSectionRenderer > content > trackTypes > 0 > trackViews
+
+![원하는 값 불러오기 위해 생성](https://user-images.githubusercontent.com/75352728/110234679-298aed00-7f6f-11eb-8a60-1d47fa1a5007.PNG)
+
+* name, artist, viewCount, current_Rank, previous_Rank, change, period_on_chart, image, play_url 불러오기
+
+##### 1. 
