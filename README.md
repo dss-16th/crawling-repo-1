@@ -107,7 +107,7 @@
 * 성공적으로 json format 불러옴.
 
 
-#### 2. 원하는 데이터 불러오기
+#### 2. 원하는 데이터 불러오기 & 
 
 ![image](https://user-images.githubusercontent.com/75352728/110234572-8934c880-7f6e-11eb-8002-55ca9633bf63.png)
 
@@ -152,7 +152,27 @@ artist
 
 ##### 3. viewCount(조회수)
 
-```
+![viewcount 코드](https://user-images.githubusercontent.com/75352728/110235799-59d58a00-7f75-11eb-88b3-f3e22dd39906.PNG)
+
+* datas에 들어있는 data를 for문을 이용하여 하나씩 가져오기
+* 조회수는 dict 안에 key값 viewCount에 들어있음.
+* 조회수를 백만단위(M)로 변환
+* `data["viewCount"]`는 str타입으므로 float로 변환
+* 소숫점 두자리까지 나타내기 위해 round() 함수 사용 
+* 단위를 붙여주기 위해 float타입으로 바꾼 data를 string타입으로 변환 후 백만 단위 "M" 붙이기
 
 ```
+viewCount = [{"viewCount":str(round((float(data["viewCount"])/1000000),2)) + "M"}
+        for data in datas]
+viewCount
+```
+
+![viewcount](https://user-images.githubusercontent.com/75352728/110235840-b638a980-7f75-11eb-88c4-a302fee45b9e.PNG)
+
+##### 3. current_Rank(현재 순위)
+
+![순위 불러오기 코드](https://user-images.githubusercontent.com/75352728/110236033-0401e180-7f77-11eb-8090-5ac3f25676a5.PNG)
+
+
+
 
