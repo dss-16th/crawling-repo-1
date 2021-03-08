@@ -68,7 +68,7 @@
 5. crontab, server 이용하여 정해진 날에 scrapying 자동실행
 6. 챗봇을 이용하여 서비스 제공
 
-![image](https://user-images.githubusercontent.com/75352728/110234282-efb8e700-7f6c-11eb-98a1-9e64545ce1fa.png)
+![image](https://user-images.githubusercontent.com/75352728/110268139-8a183980-8004-11eb-8fec-0433377471e2.png)
 
 ### 3-3. Process
 
