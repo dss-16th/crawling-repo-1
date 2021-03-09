@@ -42,7 +42,7 @@
 
 ****
 
-## 3. Proess
+## 3. Process
 
 ### 3-1. Variables Setting
 
@@ -172,7 +172,5 @@ viewCount
 ##### 3. current_Rank(현재 순위)
 
 ![순위 불러오기 코드](https://user-images.githubusercontent.com/75352728/110236033-0401e180-7f77-11eb-8090-5ac3f25676a5.PNG)
-
-
 
 
