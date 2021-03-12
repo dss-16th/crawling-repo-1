@@ -93,7 +93,7 @@ selected_chart=TRACKS&chart_params_id=weekly%3A{start_date}%3A{end_date}%3Akr"}
     # 9. mongodb로 db저장
     import pymongo
 
-    client = pymongo.MongoClient("mongodb://dss:dss@52.79.124.129:27017")
+    client = pymongo.MongoClient("")
     collection = client.youtube.data
 
 
