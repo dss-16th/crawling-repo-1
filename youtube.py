@@ -89,10 +89,12 @@ selected_chart=TRACKS&chart_params_id=weekly%3A{start_date}%3A{end_date}%3Akr"}
     # 8. 데이터 프레임 dict 타입으로 변환
     
     data_1 = df.to_dict('records')
-    return data_1
-    
-    
-    
-    
-    
-    
+
+    # 9. mongodb로 db저장
+    import pymongo
+
+    client = pymongo.MongoClient("mongodb://dss:dss@52.79.124.129:27017")
+    collection = client.youtube.data
+
+
+    collection.insert_many(data_1)
