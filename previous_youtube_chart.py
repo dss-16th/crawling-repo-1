@@ -78,7 +78,7 @@ for start_date,end_date in zip(start_date,end_date):
     data_1 = df.to_dict('records')
     import pymongo
 
-    client = pymongo.MongoClient("mongodb://dss:dss@52.79.124.129:27017")
+    client = pymongo.MongoClient("")
     collection = client.youtube.data
 
 
