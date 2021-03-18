@@ -431,7 +431,7 @@ selected_chart=TRACKS&chart_params_id=weekly%3A{start_date}%3A{end_date}%3Akr"}
 ```
 * 참고 : mogodb 설치, 보안 설정 (패캠 수업)
 * 처음 하는 분들을 위한 사이트 소개
-[mongodb 설치, 보안 설정 참고 자료](https://chichi.space/post/%ED%95%9C%EB%B2%88%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-AWS-EC2%EC%97%90-MongoDB-%EC%84%A4%EC%B9%98%ED%95%98%EA%B3%A0-%EB%B3%B4%EC%95%88%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/) 
+[mongodb 설치, 보안 설정 참고 자료 : url ](https://chichi.space/post/%ED%95%9C%EB%B2%88%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-AWS-EC2%EC%97%90-MongoDB-%EC%84%A4%EC%B9%98%ED%95%98%EA%B3%A0-%EB%B3%B4%EC%95%88%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/) 
 
 ![캡처](https://user-images.githubusercontent.com/75352728/111609570-cbd38c00-881d-11eb-97af-2dbd02cc92c9.PNG)
 
@@ -461,7 +461,7 @@ crontab -e
 * previous_youtube_chart.py 를 crontab 을 이용해서 매주 일요일마다 정보 불러올 예정
 * 경로는 절대경로가 가장 좋음.
 * 일요일 11:30 분에 할 예정
-* 참고 :  [crontab 설정](https://nahosung.tistory.com/95)
+* 참고 :  [crontab 설정 : https://nahosung.tistory.com/95 ](https://nahosung.tistory.com/95)
 
 #### 5. db에 저장한 data slack봇에 보내기
 
@@ -523,7 +523,7 @@ text = f"We found *{len(data)} result* in youtube_chart, from *{min(date).split(
 ```
 
 * f 형식을 이용해 원하는 값을 
-*  [참고 : attachment 구조 확인](https://api.slack.com/block-kit)
+*  [참고 : attachment 구조 확인: https://api.slack.com/block-kit](https://api.slack.com/block-kit)
 * 위 주소에서 만들고 싶은 코드를 직접 확인 할 수 있음.
 * attachments 변수를 payload에 추가할 필요가 있음.
 
