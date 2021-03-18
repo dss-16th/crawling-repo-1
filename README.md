@@ -545,3 +545,15 @@ send_msg(slack_webhook, json.dumps(mu))
 ![캡처](https://user-images.githubusercontent.com/75352728/111613013-684b5d80-8821-11eb-8727-9574386afb87.PNG)
 
 *****
+
+## 4. Conclusion
+
+- youtube chart 크롤링
+- DB mongodb에 저장
+- Slack에 전송
+- 현재 작성자가 원하는 데이터만 슬랙에 전송 가능
+- 예시) 날짜별 차트 전송(매주 전송) 
+
+## 5. comment & limitations
+
+- 추후 Flask, outgoing webhook(slack)을 이용하여 사용자가 원하는 정보를 선택적으로 전송 연구 필요
