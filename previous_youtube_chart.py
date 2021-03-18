@@ -3,6 +3,7 @@ import requests
 import re
 import json
 import pandas as pd
+import pandas as pd
 from datetime import datetime
 import time
 
@@ -95,10 +96,10 @@ def previous_youtube_chart():
         
         data_1 = df.to_dict('records')
 
-        9. mongodb로 db저장
+        #9. mongodb로 db저장
         import pymongo
 
-        client = pymongo.MongoClient("mongodb://dss:dss@52.79.124.129:27017")
+        client = pymongo.MongoClient("mongodb://27017")
         collection = client.youtube.data
 
 

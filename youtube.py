@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import numpy as np
 import requests
 import re
@@ -11,12 +12,12 @@ def youtube():
     # 1. 날짜 지정
     from datetime import datetime
     date = datetime.now()
-    start_date = int(date.strftime("%Y%m%d"))
     import datetime
-    end_date = date + datetime.timedelta(days=6)
-    end_date = int(end_date.strftime("%Y%m%d"))
-#     start_date = 20210226
-#     end_date = 20210304
+    start = date - datetime.timedelta(days=12)
+    start_date = start.strftime('%Y%m%d')
+
+    end = start + datetime.timedelta(days=6)
+    end_date = end.strftime('%Y%m%d')
     
     # 2. key값 불러오기.
     url = "https://charts.youtube.com/charts/TopSongs/kr?hl=ko"
@@ -24,15 +25,15 @@ def youtube():
     key = re.findall('"INNERTUBE_API_KEY":"\w+\W+\w+"', response.text)[0].split(":")[1].replace('"','')
     
     # 3. url 불러오기
-    url = f'https://charts.youtube.com/youtubei/v1/browse?alt=json&key={key}'
+    url = 'https://charts.youtube.com/youtubei/v1/browse?alt=json&key={}'.format(key)
     query = {"context":{"client":{"clientName":"WEB_MUSIC_ANALYTICS",
                               "clientVersion":"0.2","hl":"ko","gl":"KR",
                               "experimentIds":[],"experimentsToken":"",
                               "theme":"MUSIC"},"capabilities":{},
                     "request":{"internalExperimentFlags":[]}},
          "browseId":"FEmusic_analytics_charts_home",
-         "query":f"chart_params_type=WEEK&perspective=CHART&flags=viral_video_chart&\
-selected_chart=TRACKS&chart_params_id=weekly%3A{start_date}%3A{end_date}%3Akr"}
+         "query":"chart_params_type=WEEK&perspective=CHART&flags=viral_video_chart&\
+selected_chart=TRACKS&chart_params_id=weekly%3A{}%3A{}%3Akr".format(start_date,end_date)}
     headers = {"referer":"https://charts.youtube.com/charts/TopSongs/kr/20191108-20191114?hl=ko"}
     response = requests.post(url, json=query, headers=headers)
     datas = response.json()["contents"]["sectionListRenderer"]["contents"][0]["musicAnalyticsSectionRenderer"]["content"]["trackTypes"][0]["trackViews"]
@@ -89,12 +90,14 @@ selected_chart=TRACKS&chart_params_id=weekly%3A{start_date}%3A{end_date}%3Akr"}
     # 8. 데이터 프레임 dict 타입으로 변환
     
     data_1 = df.to_dict('records')
-
+    
     # 9. mongodb로 db저장
     import pymongo
 
-    client = pymongo.MongoClient("mongodb://dss:dss@52.79.124.129:27017")
-    collection = client.youtube.data
+    client = pymongo.MongoClient("mongodb://:27017")
+    collection = client.youtube.JU
 
 
     collection.insert_many(data_1)
+
+
