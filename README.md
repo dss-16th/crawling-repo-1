@@ -130,7 +130,7 @@ title
 * datas에 들어있는 data를 for문을 이용하여 하나씩 가져오기
 * 노래제목은 dict 안에 key값 name에 들어있음.
 
-<img src="https://user-images.githubusercontent.com/75352728/110796389-3d11bd00-82bb-11eb-80f2-6a45852b4d0b.png" width=width="60%" height="60%">
+<img src="https://user-images.githubusercontent.com/75352728/110796389-3d11bd00-82bb-11eb-80f2-6a45852b4d0b.PNG" width=width="60%" height="60%">
 
 ##### 2. artist(가수)
 
