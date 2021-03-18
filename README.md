@@ -67,7 +67,7 @@
 5. crontab, server 이용하여 정해진 날에 scrapying 자동실행
 6. 챗봇을 이용하여 서비스 제공
 
-<img src="https://user-images.githubusercontent.com/75352728/111613369-c8420400-8821-11eb-9b60-141c7bd81e97.PNG" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/111613369-c8420400-8821-11eb-9b60-141c7bd81e97.PNG" width="450" height="300">
 
 ### 3-3. Process
 
@@ -92,29 +92,29 @@
 
 * Request header -> header값인 referer을 발견함.
 
-![image](https://user-images.githubusercontent.com/75352728/110234493-188dac00-7f6e-11eb-9b88-5a2d98952775.png)
-<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/110234493-188dac00-7f6e-11eb-9b88-5a2d98952775.png" width="60%" height="60%">
+
 * header값 기입 -> error 발생
 
-![image](https://user-images.githubusercontent.com/75352728/110234500-2cd1a900-7f6e-11eb-9ece-851d66ef7c54.png)
-<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/110234500-2cd1a900-7f6e-11eb-9ece-851d66ef7c54.png" width="60%" height="60%">
+
 * 개발자 도구 -> request playroad를 query에 입력
 
-![image](https://user-images.githubusercontent.com/75352728/110234547-64405580-7f6e-11eb-8201-98085b938d28.png)
-<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/110234547-64405580-7f6e-11eb-8201-98085b938d28.png" width="60%" height="60%">
+
 * 성공적으로 json format 불러옴.
 
 
 #### 2. 원하는 데이터 불러오기 & 
 
-![image](https://user-images.githubusercontent.com/75352728/110234572-8934c880-7f6e-11eb-8002-55ca9633bf63.png)
-<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/110234572-8934c880-7f6e-11eb-8002-55ca9633bf63.png" width="60%" height="60%">
+
 * 개발자 도구에서 본 불러온 json 에 저장된 값들
 * 원하는 값을 불러오기
   *  contents > sectionListRenderer > contents > 0 > musicAnalyticsSectionRenderer > content > trackTypes > 0 > trackViews
 
-![원하는 값 불러오기 위해 생성](https://user-images.githubusercontent.com/75352728/110234679-298aed00-7f6f-11eb-8a60-1d47fa1a5007.PNG)
-<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/110234679-298aed00-7f6f-11eb-8a60-1d47fa1a5007.PNG" width="60%" height="60%">
+
 * name, artist, viewCount, current_Rank, previous_Rank, change, period_on_chart, image, play_url 불러오기
 
 ##### 1. name(노래 제목)
@@ -124,13 +124,13 @@ title = [{"title":data["name"]}
         for data in datas]
 title
 ```
-![title 코드](https://user-images.githubusercontent.com/75352728/110235012-1da02a80-7f71-11eb-944f-63185ab404b4.PNG)
-<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="400" height="300">
+
+<img src="https://user-images.githubusercontent.com/75352728/110235012-1da02a80-7f71-11eb-944f-63185ab404b4.PNG" width="60%" height="60%">
+
 * datas에 들어있는 data를 for문을 이용하여 하나씩 가져오기
 * 노래제목은 dict 안에 key값 name에 들어있음.
 
-![title](https://user-images.githubusercontent.com/75352728/110796389-3d11bd00-82bb-11eb-80f2-6a45852b4d0b.png)
-<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/110796389-3d11bd00-82bb-11eb-80f2-6a45852b4d0b.png" width=width="60%" height="60%">
 
 ##### 2. artist(가수)
 
@@ -139,20 +139,21 @@ artist = [{"artist":data["artists"][0]["name"]}
         for data in datas]
 artist
 ```
-![artist 코드값](https://user-images.githubusercontent.com/75352728/110235057-5b04b800-7f71-11eb-9e12-e2414963530c.PNG)
-<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="400" height="300">
+
+<img src="https://user-images.githubusercontent.com/75352728/110235057-5b04b800-7f71-11eb-9e12-e2414963530c.PNG" width="60%" height="60%">
+
 * datas에 들어있는 data를 for문을 이용하여 하나씩 가져오기
 * 가수 이름은 dict 안에 key값 artists에 들어있음.
 * artists 의 value는 list 안 dict 타입으로 list에 들어있는 0번째 data를 빼오기 위해 `[0]` 을 사용 
 * dict 안에 name value값 빼오기
 
 ![artist](https://user-images.githubusercontent.com/75352728/110234958-a8ccf080-7f70-11eb-97f9-63ce7f07f64c.PNG)
-<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="60%" height="60%">
 
 ##### 3. viewCount(조회수)
 
 ![viewcount 코드](https://user-images.githubusercontent.com/75352728/110235799-59d58a00-7f75-11eb-88b3-f3e22dd39906.PNG)
-<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="60%" height="60%">
 * datas에 들어있는 data를 for문을 이용하여 하나씩 가져오기
 * 조회수는 dict 안에 key값 viewCount에 들어있음.
 * 조회수를 백만단위(M)로 변환
