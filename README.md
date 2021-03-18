@@ -25,7 +25,7 @@
 
 #### 1-4. Dataset
 
-<img src="https://user-images.githubusercontent.com/75352728/110234179-60abcf00-7f6c-11eb-8141-8fa7f38aa8b1.png" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/110234179-60abcf00-7f6c-11eb-8141-8fa7f38aa8b1.png" width="60%" height="60%">
 * [Youtube_chart_url](https://charts.youtube.com/charts/TopSongs/kr/20210219-20210225?hl=ko)
 
 
@@ -37,7 +37,7 @@
 
 ## 2. Result : 완성된 리스트
 
-<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="60%" height="60%">
 
 ****
 
@@ -67,13 +67,13 @@
 5. crontab, server 이용하여 정해진 날에 scrapying 자동실행
 6. 챗봇을 이용하여 서비스 제공
 
-<img src="https://user-images.githubusercontent.com/75352728/111613369-c8420400-8821-11eb-9b60-141c7bd81e97.PNG" width="450" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/111613369-c8420400-8821-11eb-9b60-141c7bd81e97.PNG" width="60%" height="60%">
 
 ### 3-3. Process
 
 #### 1. 사이트 분석
 
-<img src="https://user-images.githubusercontent.com/75352728/110234339-4aead980-7f6d-11eb-98cc-e59aa9a90cdb.png" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/75352728/110234339-4aead980-7f6d-11eb-98cc-e59aa9a90cdb.png" width="60%" height="60%">
 
 <img src="https://user-images.githubusercontent.com/75352728/110234324-3a3a6380-7f6d-11eb-8648-b773413cf840.png" width="60%" height="60%">
 
