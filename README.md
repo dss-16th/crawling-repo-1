@@ -34,11 +34,13 @@
 
 #### 1-5. Roles
 * 정민주 : 
-* 이주영 : 
+* 이주영 : Crawling, DB 저장(2018-2019 year), slack bot 구현, module 생성(previous_youtube_chart.py, youtube.py, youtube_chatbot.py), READ_ME 작성
 
 ****
 
 ## 2. Result : 완성된 리스트
+
+![캡처](https://user-images.githubusercontent.com/75352728/111607978-18b66300-881c-11eb-9336-17a2f2db26e0.PNG)
 
 ****
 
@@ -259,7 +261,7 @@ df.head()
 * dataframe을 보면 NaN 값이 있는 것을 알 수 있음
 * 조회수 -  단위 변경이 필요
 * 순위 변동률 - % 단위로 표현하고 소숫점 둘째자리까지만 표현하도록 변경 필요
-* 
+
 ##### 3.2 데이터프레임 정보
 
 ```
@@ -418,6 +420,7 @@ selected_chart=TRACKS&chart_params_id=weekly%3A{start_date}%3A{end_date}%3Akr"}
     data_1 = df.to_dict('records')
 
     # 9. mongodb로 db저장
+   
     import pymongo
 
     client = pymongo.MongoClient("[mongodb주소:2017]")
@@ -426,13 +429,22 @@ selected_chart=TRACKS&chart_params_id=weekly%3A{start_date}%3A{end_date}%3Akr"}
 
     collection.insert_many(data_1)
 ```
-##### 4.2 이전 날짜 크롤링
+* 참고 : mogodb 설치, 보안 설정 (패캠 수업)
+* 처음 하는 분들을 위한 사이트 소개
+[mongodb 설치, 보안 설정 참고 자료](https://chichi.space/post/%ED%95%9C%EB%B2%88%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-AWS-EC2%EC%97%90-MongoDB-%EC%84%A4%EC%B9%98%ED%95%98%EA%B3%A0-%EB%B3%B4%EC%95%88%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/) 
+
+![캡처](https://user-images.githubusercontent.com/75352728/111609570-cbd38c00-881d-11eb-97af-2dbd02cc92c9.PNG)
+
+* 생각보다 data가 많다.
+
+##### 4.2 이전 날짜 크롤링(previous_youtube_chart 모듈 실행)
 
 ```
 import previous_youtube_chart
 
 previous_youtube_chart.previous_youtube_chart()
 ```
+
 
 ##### 4.3 현재 날짜 크롤링
 
@@ -441,6 +453,15 @@ import previous_youtube_chart
 
 previous_youtube_chart.previous_youtube_chart()
 ```
+```
+crontab -e
+```
+![crontab -e](https://user-images.githubusercontent.com/75352728/111609236-70a19980-881d-11eb-9811-9a089938c9be.PNG)
+
+* previous_youtube_chart.py 를 crontab 을 이용해서 매주 일요일마다 정보 불러올 예정
+* 경로는 절대경로가 가장 좋음.
+* 일요일 11:30 분에 할 예정
+* 참고 :  [crontab 설정](https://nahosung.tistory.com/95)
 
 #### 5. db에 저장한 data slack봇에 보내기
 
@@ -449,19 +470,21 @@ previous_youtube_chart.previous_youtube_chart()
 ```
 import pymongo
 import requests,json
-import pprint
 ```
 ##### 5.2 db 불러오기
 
 ```
-client = pymongo.MongoClient("[mongodb주소:2017]")
-db = client.youtube
-collection = db.data
-searches  = collection.find({'artist':{'$regex':'트와'},'date':{'$regex':'20190103'}})
+client = pymongo.MongoClient("mongodb주소://:27017")
+db = client.youtube #client :  mongodb주소, youtube : database
+collection = db.data #data : collection 
+searches  = collection.find({'artist':{'$regex':'방탄'},'date':{'$regex':'2021'}})
+# regex를 이용해서 특정 단어만 들어 있어도 불러 올수 있게 만듦
+# find : 원하는 정보 모두를 불러옴.
 msg = []
+
 for search in searches:
         msg.append(search)
-
+# 불러온 db를 이용하여 각 변수명에 저장(for 문 이용)
 title = [data["title"] for data in msg]
 artist = [data["artist"] for data in msg]
 viewCount = [data["viewCount"] for data in msg]
@@ -473,8 +496,8 @@ date = [data["date"] for data in msg]
 image = [data["image"] for data in msg]
 play_url = [data["play_url"] for data in msg]    
 ```
-* regex를 이용해서 특정 단어만 들어 있어도 불러 올수 있게 만듦
-* 불러온 db를 이용하여 각 변수명에 저장
+
+* [참고 : https://www.fun-coding.org/mongodb_basic5.html](https://www.fun-coding.org/mongodb_basic5.html)
 
 ##### 5.2 slack attachment를 이용해 원하는 형식으로 보내기
 ```
@@ -499,18 +522,23 @@ for i in range(len(title)):
 text = f"We found *{len(data)} result* in youtube_chart, from *{min(date).split('-')[0]} to {max(date).split('-')[1]}*"
 ```
 
+* f 형식을 이용해 원하는 값을 
+*  [참고 : attachment 구조 확인](https://api.slack.com/block-kit)
+* 위 주소에서 만들고 싶은 코드를 직접 확인 할 수 있음.
+* attachments 변수를 payload에 추가할 필요가 있음.
+
 ##### 6. 챗봇 함수
 
 ```
-def send_msg(slack_webhook, msg, channel="[채널이름]", username="차트알림봇"):
-    payload = {"channel": channel, "username": username, "text": msg}
+def send_msg(slack_webhook, msg, channel="your_channe_name", username="차트알림>봇"):
+    payload = {"channel": channel, "username": username, "text": text, "attachments":attachments}
     requests.post(slack_webhook, json.dumps(payload))
 ```
 ```
-slack_webhook = "[webhook 주소]"
-send_msg(slack_webhook, msg)
+slack_webhook = ""
+send_msg(slack_webhook, json.dumps(mu))
 ```
- 
+
 ##### 7. Slack에 보내기
 
 ![캡처](https://user-images.githubusercontent.com/75352728/111607817-f290c300-881b-11eb-8d7d-d6e0d6523438.PNG)
