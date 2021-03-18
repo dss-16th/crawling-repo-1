@@ -94,6 +94,7 @@ selected_chart=TRACKS&chart_params_id=weekly%3A{}%3A{}%3Akr".format(start_date,e
     # 9. mongodb로 db저장
     import pymongo
 
+<<<<<<< HEAD
     client = pymongo.MongoClient("mongodb://:27017")
     collection = client.youtube.JU
 
@@ -101,3 +102,10 @@ selected_chart=TRACKS&chart_params_id=weekly%3A{}%3A{}%3Akr".format(start_date,e
     collection.insert_many(data_1)
 
 
+=======
+    client = pymongo.MongoClient("")
+    collection = client.youtube.data
+
+
+    collection.insert_many(data_1)
+>>>>>>> 80318ffa9bfca9e17eb208aa5aebeddcbcd15e3d

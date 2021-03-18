@@ -99,7 +99,11 @@ def previous_youtube_chart():
         #9. mongodb로 db저장
         import pymongo
 
+<<<<<<< HEAD
         client = pymongo.MongoClient("mongodb://27017")
+=======
+        client = pymongo.MongoClient("")
+>>>>>>> 80318ffa9bfca9e17eb208aa5aebeddcbcd15e3d
         collection = client.youtube.data
 
 
