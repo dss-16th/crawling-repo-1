@@ -9,13 +9,13 @@
 ##### * 정민주 :  
 ##### 
 ##### GitHub address : [https://github.com/meiren13](https://github.com/meiren13)
-##### * 이주영 : 
-##### 
+##### * 이주영 : Crawling, DB 저장(2018-2019 year), slack bot 구현, module 생성(previous_youtube_chart.py, youtube.py, youtube_chatbot.py)
+##### READ_ME
 ##### GitHub address : [https://github.com/leekj3133](https://github.com/leekj3133)
 
 ****
 #### reference
-* C
+* 
 ****
 
 
@@ -460,17 +460,44 @@ collection = db.data
 searches  = collection.find({'artist':{'$regex':'트와'},'date':{'$regex':'20190103'}})
 msg = []
 for search in searches:
-    search =list(search.items())[1:]
-    msg.append(search)
-    msg.append("\n")
-    
-msg = list(itertools.chain(*msg))
-msg = str(msg)
-msg = msg.replace('\\n','                                          ')
-msg
+        msg.append(search)
+
+title = [data["title"] for data in msg]
+artist = [data["artist"] for data in msg]
+viewCount = [data["viewCount"] for data in msg]
+current_Rank = [data["current_Rank"] for data in msg]
+previous_Rank = [data["previous_Rank"] for data in msg]
+change = [data["change"] for data in msg]
+period_on_chart = [data["period_on_chart"] for data in msg]
+date = [data["date"] for data in msg]
+image = [data["image"] for data in msg]
+play_url = [data["play_url"] for data in msg]    
 ```
 * regex를 이용해서 특정 단어만 들어 있어도 불러 올수 있게 만듦
-* 챗봇은 string 타입만 받아들임
+* 불러온 db를 이용하여 각 변수명에 저장
+
+##### 5.2 slack attachment를 이용해 원하는 형식으로 보내기
+```
+for i in range(len(title)):
+    mu = {"blocks": [
+            {"type": "divider"},
+            {"type": "section",
+             "text": {"type": "mrkdwn",
+             "text": f"*<{play_url[i]}|{title[i]}>*\ {artist[i]} \nview Count : {viewCount[i]}\ncurrent_Rank : {current_Rank[i]} \nchange : {change[i]}\nperiod_on_chart : {period_on_chart[i]}"
+            },
+            "accessory": {"type": "image",
+                          "image_url": f"{image[i]}",
+                          "alt_text": f"{artist[i]} {title[i]}"}
+            },
+            {"type": "context",
+             "elements": [{"type": "plain_text",
+                  "text": f"previous_Rank : {previous_Rank[i]}"}]
+            },
+            {"type": "divider"}]
+            }
+    attachments.append(mu)
+text = f"We found *{len(data)} result* in youtube_chart, from *{min(date).split('-')[0]} to {max(date).split('-')[1]}*"
+```
 
 ##### 6. 챗봇 함수
 
@@ -484,3 +511,8 @@ slack_webhook = "[webhook 주소]"
 send_msg(slack_webhook, msg)
 ```
  
+##### 7. Slack에 보내기
+
+![캡처](https://user-images.githubusercontent.com/75352728/111607817-f290c300-881b-11eb-8d7d-d6e0d6523438.PNG)
+
+
