@@ -461,7 +461,7 @@ crontab -e
 
 <img src="https://user-images.githubusercontent.com/75352728/111609236-70a19980-881d-11eb-9811-9a089938c9be.PNG" width="60%" height="60%">
 
-* previous_youtube_chart.py 를 crontab 을 이용해서 매주 일요일마다 정보 불러올 예정
+* youtube_chart.py 를 crontab 을 이용해서 매주 일요일마다 정보 불러올 예정
 * 경로는 절대경로가 가장 좋음.
 * 일요일 11:30 분에 할 예정
 * 참고 :  [crontab 설정 : https://nahosung.tistory.com/95 ](https://nahosung.tistory.com/95)
