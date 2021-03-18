@@ -40,7 +40,7 @@
 
 ## 2. Result : 완성된 리스트
 
-![캡처](https://user-images.githubusercontent.com/75352728/111607978-18b66300-881c-11eb-9336-17a2f2db26e0.PNG)
+![캡처](https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG)
 
 ****
 
@@ -541,6 +541,7 @@ send_msg(slack_webhook, json.dumps(mu))
 
 ##### 7. Slack에 보내기
 
-![캡처](https://user-images.githubusercontent.com/75352728/111607817-f290c300-881b-11eb-8d7d-d6e0d6523438.PNG)
+![캡처](https://user-images.githubusercontent.com/75352728/111613013-684b5d80-8821-11eb-8727-9574386afb87.PNG)
+
 
 
