@@ -27,13 +27,13 @@
 #### 1-2. purpose
 조회수가 기준인 유튜브 차트 100을 이용하여 소비자들에게 정보제공을 하기 위해 크롤링과 메세지보내기를이용
 
-#### 1-4. Dataset
+#### 1-3. Dataset
 
 <img src="https://user-images.githubusercontent.com/75352728/110234179-60abcf00-7f6c-11eb-8141-8fa7f38aa8b1.png" width="60%" height="60%">
 * [Youtube_chart_url](https://charts.youtube.com/charts/TopSongs/kr/20210219-20210225?hl=ko)
 
 
-#### 1-5. Roles
+#### 1-4. Roles
 * 정민주 : 
 * 이주영 : Crawling, DB 저장(2018-2019 year), slack bot 구현, module 생성(previous_youtube_chart.py, youtube.py, youtube_chatbot.py), READ_ME 작성
 
