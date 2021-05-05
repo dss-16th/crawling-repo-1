@@ -606,8 +606,6 @@ send_msg(slack_webhook, json.dumps(mu))
 
 *****
 
-*****
-
 ##### 7. Slack에 보내기
 
 <img src="https://user-images.githubusercontent.com/75352728/111613013-684b5d80-8821-11eb-8727-9574386afb87.PNG" width="60%" height="60%">
