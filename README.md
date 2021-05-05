@@ -19,8 +19,12 @@
 ##### GitHub address : [https://github.com/leekj3133](https://github.com/leekj3133)
 
 *****
+<br/>
+<br/>
 
 ## 1. Intro
+
+<br/>
 
 #### 1-1. Intro  
 
@@ -37,7 +41,12 @@
 * 정민주 : 
 * 이주영 : Crawling, DB 저장(2018-2019 year), slack bot 구현, module 생성(previous_youtube_chart.py, youtube.py, youtube_chatbot.py), READ_ME 작성
 
+<br/>
+
 ****
+
+<br/>
+<br/>
 
 ## 2. Result : 완성된 리스트
 
@@ -45,9 +54,17 @@
 
 ****
 
+<br/>
+<br/>
+
+
 ## 3. Process
 
+<br/>
+
 ### 3-1. Variables Setting
+
+<br/>
 
 #### 1. Variables
 
@@ -62,7 +79,11 @@
   *  image : 사진
   *  play_url : 동영상 play url
 
+<br/>
+
 ### 3-2. Details
+
+<br/>
 
 1. 사이트 분석
 2. 원하는 데이터 불러오기
@@ -73,7 +94,11 @@
 
 <img src="https://user-images.githubusercontent.com/75352728/111613369-c8420400-8821-11eb-9b60-141c7bd81e97.PNG" width="60%" height="60%">
 
+<br/>
+
 ### 3-3. Process
+
+<br/>
 
 #### 1. 사이트 분석
 
@@ -111,7 +136,7 @@
 * 성공적으로 json format 불러옴.
 
 
-#### 2. 원하는 데이터 불러오기 & 
+#### 2. 원하는 데이터 불러오기
 
 <img src="https://user-images.githubusercontent.com/75352728/110234572-8934c880-7f6e-11eb-8002-55ca9633bf63.png" width="60%" height="60%">
 
@@ -249,7 +274,12 @@ data_1
 
 <img src="https://user-images.githubusercontent.com/75352728/110801048-2f126b00-82c0-11eb-8900-df01573ebde9.png" width="60%" height="60%">
 
+<br/>
+<br/>
+
 #### 3. 데이터 프레임 변환 & 전처리
+
+<br/>
 
 ##### 3.1 데이터프레임으로 데이터 불러오기
 
@@ -286,7 +316,7 @@ import numpy as np
 ```
 df = df.replace(np.nan,0)
 ```
-##### 3.4 변경 확인
+##### 3.5 변경 확인
 
 ```
 df.info()
@@ -294,7 +324,7 @@ df.info()
 
 <img src="https://user-images.githubusercontent.com/75352728/110799257-549e7500-82be-11eb-896c-de33e17481b6.png" width="60%" height="60%">
 
-##### 3.4 previous_Rank 단위 변경
+##### 3.6 previous_Rank 단위 변경
 
 ```
 df['previous_Rank'].astype(int)
@@ -302,7 +332,7 @@ df['previous_Rank'].astype(int)
 
 * 현재순위에 맞게 int타입으로 변환
 
-##### 3.4 change 소수 첫째자리인 percentage로 변환
+##### 3.7 change 소수 첫째자리인 percentage로 변환
 
 ```
 df['change'] = round(df['change'] * 100,1).astype(str) + "%"
@@ -311,9 +341,15 @@ df.head()
 
 <img src="https://user-images.githubusercontent.com/75352728/110799605-b1019480-82be-11eb-907b-cab1b1a7d40b.png" width="60%" height="60%">
 
+<br/>
+<br/>
+
 #### 4. .py 형태로 모듈 만들기
 
+<br/>
+
 ##### 4.1 py 파일(previous_youtube: 이전 날짜 data, youtube: 현재 날짜 불러오기)
+
 ```
 import numpy as np
 import requests
@@ -437,13 +473,16 @@ selected_chart=TRACKS&chart_params_id=weekly%3A{start_date}%3A{end_date}%3Akr"}
 
     collection.insert_many(data_1)
 ```
+
 * 참고 : mogodb 설치, 보안 설정 (패캠 수업)
 * 처음 하는 분들을 위한 사이트 소개
+
 [mongodb 설치, 보안 설정 참고 자료 : url ](https://chichi.space/post/%ED%95%9C%EB%B2%88%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-AWS-EC2%EC%97%90-MongoDB-%EC%84%A4%EC%B9%98%ED%95%98%EA%B3%A0-%EB%B3%B4%EC%95%88%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/) 
 
 <img src="https://user-images.githubusercontent.com/75352728/111609570-cbd38c00-881d-11eb-97af-2dbd02cc92c9.PNG" width="60%" height="60%">
 
 * 생각보다 data가 많다.
+
 
 ##### 4.2 이전 날짜 크롤링(previous_youtube_chart 모듈 실행)
 
@@ -472,7 +511,12 @@ crontab -e
 * 일요일 11:30 분에 할 예정
 * 참고 :  [crontab 설정 : https://nahosung.tistory.com/95 ](https://nahosung.tistory.com/95)
 
+<br/>
+<br/>
+
 #### 5. db에 저장한 data slack봇에 보내기
+
+<br/>
 
 ##### 5.1 모듈 불러오기
 
@@ -536,6 +580,8 @@ text = f"We found *{len(data)} result* in youtube_chart, from *{min(date).split(
 * 위 주소에서 만들고 싶은 코드를 직접 확인 할 수 있음.
 * attachments 변수를 payload에 추가할 필요가 있음.
 
+<br/>
+
 ##### 6. 챗봇 함수
 
 ```
@@ -547,6 +593,7 @@ def send_msg(slack_webhook, msg, channel="your_channe_name", username="차트알
 slack_webhook = ""
 send_msg(slack_webhook, json.dumps(mu))
 ```
+<br/>
 
 ##### 7. Slack에 보내기
 
@@ -555,6 +602,9 @@ send_msg(slack_webhook, json.dumps(mu))
 
 *****
 
+<br/>
+<br/>
+
 ## 4. Conclusion
 
 - youtube chart 크롤링
@@ -562,6 +612,9 @@ send_msg(slack_webhook, json.dumps(mu))
 - Slack에 전송
 - 현재 작성자가 원하는 데이터만 슬랙에 전송 가능
 - 예시) 날짜별 차트 전송(매주 전송) 
+
+<br/>
+<br/>
 
 ## 5. comment & limitations
 
