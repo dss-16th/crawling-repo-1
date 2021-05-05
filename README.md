@@ -14,8 +14,8 @@
 ##### * 정민주 :  
 ##### 
 ##### GitHub address : [https://github.com/meiren13](https://github.com/meiren13)
-##### * 이주영 : Crawling, data 전처리, DB 저장(2018-2019 year), slack bot 구현 & 서식, module 생성(previous_youtube_chart.py, youtube.py, youtube_chatbot.py)
-##### READ_ME
+
+##### * 이주영 : Crawling, data 전처리, DB 저장(2018-2019 year), slack bot 구현 & 서식, module 생성(previous_youtube_chart.py, youtube.py, youtube_chatbot.py), READ_ME작성
 ##### GitHub address : [https://github.com/leekj3133](https://github.com/leekj3133)
 
 *****
