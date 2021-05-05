@@ -62,7 +62,7 @@
   *  image : 사진
   *  play_url : 동영상 play url
 
-#### 3-2. Details
+### 3-2. Details
 
 1. 사이트 분석
 2. 원하는 데이터 불러오기
