@@ -1,7 +1,7 @@
 
 #  유튜브 차트(조회수 기준) 100을 챗봇을 이용하여 전송해주는 서비스
 
-![image](https://user-images.githubusercontent.com/75352728/117124191-faf48b80-add2-11eb-80d3-b25689a899c5.png)
+![image](https://user-images.githubusercontent.com/75352728/117124347-3000de00-add3-11eb-81c9-d8c94ff3f336.png)
 
 
 #### __CRAWLING PROJECT__
