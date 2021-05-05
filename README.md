@@ -77,6 +77,8 @@
 
 #### 1. 사이트 분석
 
+* 시행착오가 너무 많았던 crawling...
+
 <img src="https://user-images.githubusercontent.com/75352728/110234339-4aead980-7f6d-11eb-98cc-e59aa9a90cdb.png" width="60%" height="60%">
 
 <img src="https://user-images.githubusercontent.com/75352728/110234324-3a3a6380-7f6d-11eb-8648-b773413cf840.png" width="60%" height="60%">
