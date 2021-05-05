@@ -9,6 +9,7 @@
 
 
 ****
+
 #### 기간 : 2021.03.03 - 2021.03.19
 #### * 인원 : 2명
 ##### * 정민주 :  
@@ -19,6 +20,7 @@
 ##### GitHub address : [https://github.com/leekj3133](https://github.com/leekj3133)
 
 *****
+
 <br/>
 <br/>
 
@@ -48,6 +50,8 @@
 <br/>
 <br/>
 
+*****
+
 ## 2. Result : 완성된 리스트
 
 <img src="https://user-images.githubusercontent.com/75352728/111612988-61bce600-8821-11eb-8b21-0e0bce6badc7.PNG" width="60%" height="60%">
@@ -66,7 +70,7 @@
 
 <br/>
 
-#### 1. Variables
+#### 3-1 Variables
 
 * 데이터 정의
   *  name : 노래 제목
