@@ -1,12 +1,13 @@
 
 # <div align=center>유튜브 차트(조회수 기준) 100을 챗봇을 이용하여 전송해주는 서비스</div>
 
+#### __CRAWLING PROJECT__
 
 <p align="center">
  <img src="https://user-images.githubusercontent.com/75352728/117137063-292e9700-ade4-11eb-9e3f-527dd42beccc.png" width="30%" height="30%">
  </p>
 
-#### __CRAWLING PROJECT__
+
 ****
 #### 기간 : 2021.03.03 - 2021.03.19
 #### * 인원 : 2명
