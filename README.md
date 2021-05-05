@@ -589,6 +589,8 @@ text = f"We found *{len(data)} result* in youtube_chart, from *{min(date).split(
 
 <br/>
 
+*****
+
 ##### 6. 챗봇 함수
 
 ```
@@ -601,6 +603,10 @@ slack_webhook = ""
 send_msg(slack_webhook, json.dumps(mu))
 ```
 <br/>
+
+*****
+
+*****
 
 ##### 7. Slack에 보내기
 
