@@ -12,7 +12,7 @@
 
 #### 기간 : 2021.03.03 - 2021.03.19
 #### * 인원 : 2명
-##### * 정민주 :  
+##### * 정민주 :  Crawling, data 전처리, DB 저장, module 생성
 ##### 
 ##### GitHub address : [https://github.com/meiren13](https://github.com/meiren13)
 
